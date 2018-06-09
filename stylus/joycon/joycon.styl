@@ -1,0 +1,28 @@
+// estilos de los joycon
+$br = 4em
+$st = 3.75em
+.joycon
+	width 7.5em
+	border-top .5em solid alpha(white, .15)
+	border-bottom .75em solid alpha($negro, .1)
+	box-sizing border-box
+	&:before
+		content ''
+		background linear-gradient($negro 18%, transparent 18%)
+		position absolute
+		top -.75em
+		width 90%
+		height 100%
+		z-index -1
+	&.left
+		background-color $celeste
+		border-radius $br 0 0 $br
+		&:before
+			border-radius $br 0 0 0
+			left -.2em
+	&.right
+		background-color $rojo
+		border-radius 0 $br $br 0
+		&:before
+			border-radius 0 $br 0 0
+			right -.2em

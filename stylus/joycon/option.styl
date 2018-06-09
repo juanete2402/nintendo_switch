@@ -1,0 +1,26 @@
+// option button
+.joycon
+	&.left .option
+		right .75em
+		&:after
+			display none
+	&.right .option
+		left .75em
+	.option
+		position absolute
+		width 1.3em
+		height 1.3em
+		top .25em
+		&:before, &:after
+			content ''
+			position absolute
+			top 50%
+			left 50%
+			background-color lighten($negro, 15)
+			transform translate(-50%, -50%)
+		&:before
+			width 100%
+			height .4em
+		&:after
+			width .4em
+			height 100%

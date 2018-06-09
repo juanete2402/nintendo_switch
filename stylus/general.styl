@@ -1,0 +1,144 @@
+// estilos generales
+body
+.container
+	background linear-gradient(90deg, $rojo 50%, $celeste 50%)
+	position relative
+	font-size $fz
+	width 100%
+	height 100vh
+.box
+	position absolute
+	width 48em
+	height 22em
+	// outline .5em solid alpha($negro, .2)
+	// background white
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	&:before
+		content ''
+		position absolute
+		bottom -($fz * 7)
+		left 50%
+		transform translateX(-50%)
+		width 90%
+		height $fz * 1.5
+		background alpha(black, .1)
+		border-radius 50%
+		z-index 5
+.switch
+	position absolute
+	transform translate(-50%, -50%)
+	top 50%
+	left 50%
+	font-size 0
+	width 100%
+	text-align center
+	.detalle
+		position absolute
+		font-size $fz
+		width 7em
+		height 5.5em
+		z-index -1
+		&.left
+			top -4em
+			left -4em
+		&.right
+			bottom -4em
+			right -4em
+		.cruz, .ball
+			position absolute
+		.cruz
+			&._1
+				width 1.8em
+				height 1.8em
+				bottom 0
+				left 1em
+			&._2
+				width 1.3em
+				height 1.3em
+				top 0
+				left 3em
+			&:before, &:after
+				content ''
+				position absolute
+				background-color white
+				top 50%
+				left 50%
+				transform translate(-50%, -50%)
+			&:before
+				width 25%
+				height 100%
+			&:after
+				width 100%
+				height 25%
+		.ball
+			width .7em
+			height .7em
+			background-color white
+			border-radius 50%
+			&._1
+				top 2em
+				left .5em
+			&._2
+				top 3em
+				left 3.75em
+			&._3
+				top 2.5em
+				right 0
+				
+.joycon, .pad
+	font-size $fz
+	display inline-block
+	height 21em
+	position relative
+	
+// animando
+.switch
+	animation anima_switch 3s ease-in-out infinite
+.box:before
+	animation anima_sombra 3s ease-in-out infinite
+.cruz
+	animation anima_cruz 3s ease-out infinite
+.ball
+	animation anima_ball 3s ease-in infinite
+@keyframes anima_switch
+	0%
+		transform translate(-50%, -50%) rotate(0)
+	50%
+		transform translate(-50%, -60%) rotate(3deg)
+	100%
+		transform translate(-50%, -50%) rotate(0)
+
+@keyframes anima_sombra
+	0%
+		width 90%
+		height $fz * 1.5
+		transform translateX(-50%)
+	50%
+		width 80%
+		height $fz * .75
+		transform translateX(-40%)
+	100%
+		width 90%
+		height $fz * 1.5
+		transform translateX(-50%)
+
+@keyframes anima_cruz
+	0%
+		transform rotate(0) scale(1)
+	50%
+		transform rotate(360deg) scale(.5)
+	100%
+		transform rotate(0) scale(1)
+
+@keyframes anima_ball
+	0%
+		transform scale(1)
+		border-radius 50%
+	50%
+		transform scale(1.25)
+		border-radius 0
+	100%
+		transform scale(1)
+		border-radius 50%

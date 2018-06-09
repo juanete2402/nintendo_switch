@@ -1,0 +1,70 @@
+// cross
+.joycon
+	.cross
+		position absolute
+		left 50%
+		width 5em
+		height 5em
+		transform translateX(-50%)
+		div
+			position absolute
+			width 1.7em
+			height 1.7em
+			background-color lighten($negro, 15)
+			border-radius 50%
+			border-top .2em solid alpha(white, .2)
+			box-sizing border-box
+			box-shadow 0 .3em 0 0 alpha($negro, .2)
+			&:before
+				content ''
+				position absolute
+				top 50%
+				left 50%
+				width 0
+				height 0
+			&.up, &.down
+				left 50%
+				transform translateX(-50%)
+			&.right, &.left
+				top 50%
+				transform translateY(-50%)
+			&.up
+				top 0
+			&.down
+				bottom 0
+			&.right
+				right 0
+			&.left
+				left 0
+	&.left .cross
+		top 7.5em
+		div
+			&:before
+				border-left .4em solid transparent
+				border-right .4em solid transparent
+				border-bottom .7em solid $negro
+			&.up:before
+				transform translate(-50%, -60%) rotate(0)
+			&.down:before
+				transform translate(-50%, -60%) rotate(180deg)
+			&.right:before
+				transform translate(-40%, -60%) rotate(90deg)
+			&.left:before
+				transform translate(-60%, -60%) rotate(270deg)
+	&.right .cross
+		top 2em
+		div
+			&:before
+				color lighten($negro, 60)
+				font-family arial
+				top .25em
+				left .55em
+				font-size .95em
+			&.up:before
+				content 'X'
+			&.down:before
+				content 'B'
+			&.right:before
+				content 'A'
+			&.left:before
+				content 'Y'

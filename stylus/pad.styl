@@ -1,0 +1,76 @@
+// estilos del pad
+.pad
+	$esp = 2em
+	width 32em
+	background lighten($negro, 20)
+	&:before
+		content ''
+		position absolute
+		bottom 100%
+		left 4.5em
+		width 3.5em
+		height .3em
+		background linear-gradient(90deg, $negro, lighten($negro, 25), $negro, lighten($negro, 25), $negro)
+	.circulos
+		overflow hidden
+		position absolute
+		width 100%
+		height 100%
+		position absolute
+		top 0
+		left 0
+		&:before, &:after
+			content ''
+			position absolute
+			top -($esp/2)
+			width $esp
+			height $esp
+			border-radius 50%
+		&:before
+			left -($esp/2)
+			background-color $rojo
+		&:after
+			right -($esp/2)
+			background-color $celeste
+	&-content
+		position absolute
+		top 50%
+		left 50%
+		width 92%
+		height 90%
+		border .15em solid $negro
+		background lighten($negro, 10)
+		border-radius 1.25em
+		transform translate(-50%, -50%)
+		overflow hidden
+		&:before, &:after
+			content ''
+			position absolute
+			bottom -.1em
+			background-color $negro
+			width 2em
+			height .3em
+			clip-path polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)
+			z-index 5
+		&:before
+			left 1.2em
+		&:after
+			right 1.2em
+		.screen
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			width 88%
+			height 88%
+			background-color $negro
+		.brillo
+			$brillo1 = alpha(lighten($negro, 10), .25)
+			$brillo2 = alpha(lighten($negro, 50), .25)
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background linear-gradient(135deg, $brillo1 12%, $brillo2 12%, $brillo2 30%, $brillo1 30%, $brillo1 36%, $brillo2 36%, $brillo2 60%, $brillo1 60%)
+			z-index 2

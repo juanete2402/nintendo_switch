@@ -1,0 +1,47 @@
+// option 2
+.joycon
+	.option2
+		position absolute
+		box-sizing border-box
+	&.left .option2
+		bottom 5em
+		right 1.5em
+		width 1.4em
+		height 1.4em
+		background-color lighten($negro, 15)
+		border-radius .1em
+		&:before
+			content ''
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			width 70%
+			height 70%
+			border-radius 50%
+			box-sizing border-box
+			border .2em solid $negro
+	&.right .option2
+		bottom 4.75em
+		left 1.25em
+		width 1.75em
+		height 1.75em
+		background-color lighten($negro, 10)
+		border-radius 50%
+		border .2em solid lighten($negro, 30)
+		&:before, &:after
+			content ''
+			position absolute
+			top 50%
+			left 50%
+		&:before
+			transform translate(-50%, -30%)
+			width .35em
+			height .2em
+			border .12em solid $negro
+		&:after
+			transform translate(-50%, -110%)
+			border-left .45em solid transparent
+			border-right .45em solid transparent
+			border-bottom .4em solid $negro
+				
